@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شرکت هواپیمایی مهسا</title>
+    <link href="../index.css" rel="stylesheet" />
+    <link href="home.css" rel="stylesheet" />
+    <link rel="icon" href="../favicon.svg">
+</head>
+
+<body dir="rtl" id="root">
+    <nav class="home-navbar">
+        <img id="navbar-menu" class="navbar-menu" src="../imgs/menu.png" width="30px" height="30px"
+            onclick="openNav()" />
+        <div id="navbar-side-menu" class="side-navbar">
+            <span class="closebtn" onclick="closeNav()">&times;</span>
+            <button id="main-menu-button" class="navbar-button">
+                صفحه اصلی
+            </button>
+            <button id="navbar-login-button" class="navbar-button" onclick="login()">
+                ورود / ثبت نام
+            </button>
+            <button id="navbar-profile" class="navbar-button">
+                پروفایل
+            </button>
+            <button id="navbar-aboutus" class="navbar-button">
+                درباره ما
+            </button>
+            <button id="navbar-logout" class="navbar-button" onclick="logout()">
+                خروج
+            </button>
+        </div>
+        <a href="#" class="headerLogo">
+            <p class="header-logo-title">هواپیمایی مهسا</p>
+            <picture>
+                <source
+                    srcset="../imgs/logoW.png"
+                    media="(prefers-color-scheme: dark)">
+                    <img src="../imgs/logo.png" height="35px" />
+            </picture>
+           
+        </a>
+    </nav>
+    <div class="home-container">
+
+    </div>
+    <div class="search-ticket-container">
+        <h2 class="card-title">جستجوی بلیط</h2>
+        <div class="search-ticket-grid">
+            <div class="city-autocomplete">
+                <p class="field-title">مبدا</p>
+                <input class="text-input" id="source-city-input" placeholder="انتخاب مبدا">
+            </div>
+            <div class="city-autocomplete">
+                <p class="field-title">مقصد</p>
+                <input class="text-input" id="destination-city-input" placeholder="انتخاب مقصد" />
+            </div>
+            <div>
+                <p class="field-title">تاریخ رفت</p>
+                <input type="date" class="text-input" />
+            </div>
+            <div>
+                <p class="field-title">تاریخ برگشت</p>
+                <input type="date" class="text-input" />
+            </div>
+            <div>
+                <p class="field-title">تعداد مسافر</p>
+                <div class="passengers-number">
+                    <button class="increment-button" id="increment-button" onclick="incrementPassengerNumber()">+</button>
+                    <input type="number" placeholder="تعداد مسافر" id="passenger-number-input" />
+                    <button class="decrement-button" id="decrement-button" onclick="decrementPassengerNumber()">-</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="login-button" onclick="searchTicket()">
+            جستجو
+        </button>
+
+    </div>
+
+    <h1 class="adv-subtitle">
+        برای سفر بعدی خود برنامه ریزی کنید
+    </h1>
+    <div class="advertisement-container">
+        <div class="advertisement-card">
+            <div class="adv-card-title">
+                <p>لس آنجلس</p>
+                <span class="adv-caption">7 آذر 1401 - 20 آذر 1401</span>
+            </div>
+            <img class="adv-card-image" src="../imgs/adv1.jpg" />
+        </div>
+        <div class="advertisement-card">
+            <div class="adv-card-title">
+                <p>لس آنجلس</p>
+                <span class="adv-caption">7 آذر 1401 - 20 آذر 1401</span>
+            </div>
+            <img class="adv-card-image" src="../imgs/adv2.jpg" />
+        </div>
+        <div class="advertisement-card">
+            <div class="adv-card-title">
+                <p>لس آنجلس</p>
+                <span class="adv-caption">7 آذر 1401 - 20 آذر 1401</span>
+            </div>
+            <img class="adv-card-image" src="../imgs/adv3.jpg" />
+        </div>
+        <div class="advertisement-card">
+            <div class="adv-card-title">
+                <p>لس آنجلس</p>
+                <span class="adv-caption">7 آذر 1401 - 20 آذر 1401</span>
+            </div>
+            <img class="adv-card-image" src="../imgs/adv4.jpg" />
+        </div>
+    </div>
+    <div class="home-footer">
+        <p>ارسلان مسعودی فرد</p>
+        <p>محمد رضایی</p>
+        <p>محمدامین احمدزاده</p>
+    </div>
+
+    <script src="home.js"></script>
+    <script src="../global.js"></script>
+</body>
+
+</html>

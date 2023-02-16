@@ -1,0 +1,99 @@
+version: '3'
+
+services:
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: test
+    ports:
+      - 5432:5432
+    volumes:
+    - db-data:/var/lib/postgresql/data
+    - ./csv-files:/var/lib/postgresql/csv-files
+
+  postgres-auth:
+    container_name: postgres-auth
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: test
+    ports:
+      - 5433:5432
+    volumes:
+    - ./auth.sql:/var/lib/postgresql/auth.sql
+    - db-auth-data:/var/lib/postgresql/data
+    
+  
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - 6379:6379
+  
+  bank:
+    container_name: bank
+    build: ./Bank
+    ports:
+      - 8000:8000
+    tty: true
+
+  go-auth:
+    container_name: go-auth 
+    build: ./web_hw2_backend
+    depends_on:
+      - postgres
+      - postgres-auth
+      - redis
+    environment:
+      - DB_HOST=postgres-auth
+      - DB_PORT=5432
+      - DB_USER=test
+      - DB_DATABASE=postgres
+      - DB_PASSWORD=1234
+      - REDIS_HOST=http://redis:6379
+    ports:
+      - 8888:8888
+    
+  
+  ticket-service:
+    container_name: ticket-service
+    build: ./ticket-service-backend
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=test
+      - DB_DATABASE=postgres
+      - DB_PASSWORD=1234
+      - BANK_HOST=http://bank:8000
+      - GO_AUTH_HOST=http://go-auth:8888
+    ports:
+      - 3000:3000
+  front:
+    container_name: front
+    build: ./front
+    restart: always
+    ports:
+      - 5555:5555
+      
+  proxy:
+    container_name: proxy
+    image: nginx:alpine
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+
+   
+volumes:
+  db-data:
+    driver: local
+  db-auth-data:
+    driver: local

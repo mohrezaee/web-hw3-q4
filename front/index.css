@@ -1,0 +1,312 @@
+html,
+body {
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  padding: 0;
+  margin: 0;
+}
+html{
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Yekan";
+  outline: none;
+}
+p {
+  margin: 0px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.login-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  border-bottom: 3px solid rgb(255, 67, 67);
+  text-align: center;
+  padding-bottom: 8px;
+  margin: 0.5rem 0px;
+}
+
+.page-title {
+  border-bottom: 3px solid rgb(255, 67, 67);
+  font-size: 22pt;
+  text-align: center;
+  padding-bottom: 8px;
+  margin: 0.5rem 0px;
+  margin-left: 20px;
+}
+
+.nav-title {
+  color: #575757;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20pt;
+  padding-bottom: 8px;
+  margin: 0.5rem 0px;
+  margin-left: 20px;
+}
+
+.center-container {
+  margin: 0px auto;
+  width: 50%;
+  margin-top: 30px;
+}
+
+.text-input {
+  padding: 8px 4px;
+  width: 100%;
+  border-style: solid;
+  border-color: #c7c7c7;
+  border-width: 2px;
+  background-color: #f6f5f5;
+  font-size: 20px;
+  border-radius: 4px;
+  transition-duration: 200ms;
+  margin-bottom: 8px;
+  border-left-width: 6px;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #636060;
+  border-left-color: black;
+  background-color: white;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c7c7c7;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #c7c7c7;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #c7c7c7;
+}
+
+.login-button {
+  background-color: #e94059;
+  border-radius: 4px;
+  font-size: 24px;
+  padding: 8px 16px;
+  transition-duration: 200ms;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #bf3449;
+}
+.white-button {
+  background-color: white;
+  border-radius: 4px;
+  font-size: 24px;
+  padding: 8px 16px;
+  transition-duration: 200ms;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+.white-button:hover {
+  background-color: #c9c9c9;
+}
+
+.field-title {
+  font-size: 18px;
+  margin-bottom: 2px;
+  color: #9a9a9a;
+}
+
+.divider {
+  border-top: 2px solid rgb(255, 67, 67);
+  border-radius: 5px;
+  width: 100%;
+}
+
+.home-navbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-bottom: #636060 solid 2px;
+  z-index: 1000;
+}
+
+.navbar-button {
+  background-color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 8px 16px;
+  transition-duration: 200ms;
+  border: 2px solid #e94059;
+  color: #e94059;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.navbar-button:hover {
+  background-color: #f89dab;
+  color: #575757;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-button.active {
+  background-color: #e94059;
+  color: white;
+}
+
+.side-navbar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.side-navbar .closebtn {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  font-size: 36px;
+}
+
+.headerLogo {
+  text-decoration: none;
+  float: left;
+  font-size: 25px;
+  font-weight: 600;
+  color: #575757;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.header-logo-title {
+  margin: 0;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .side-navbar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 12px 15px -4px rgba(31, 73, 125, 0.8),
+      0 -12px 8px -4px rgba(31, 73, 125, 0.8);
+  }
+  .navbar-button {
+    background-color: white;
+    width: 100%;
+    border-radius: 0;
+    text-align: right;
+    color: black;
+    border: none;
+  }
+  .center-container {
+    width: 95%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .header-logo-title {
+    font-size: 20px;
+  }
+  .navbar-button {
+    font-size: 20px;
+  }
+  .side-navbar .closebtn {
+    display: none;
+  }
+  .navbar-menu {
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: "Yekan";
+  src: url("fonts/Yekan.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body,
+  #root {
+    background-color: rgb(32, 32, 32);
+  }
+  .home-navbar {
+    background-color: rgb(51, 51, 51);
+  }
+
+  .navbar-button {
+    background-color: rgb(32, 28, 28);
+    color: white;
+  }
+  .navbar-button:hover {
+    background-color: rgb(67, 63, 63);
+    color: #e94059;
+  }
+
+  .side-navbar {
+    background-color: rgb(51, 51, 51);
+  }
+  .header-logo-title {
+    color: white;
+  }
+  .text-input {
+    background-color: #4a4949;
+    color: white;
+  }
+  .text-input:focus {
+    border-color: #e94059;
+    border-left-color: #e94059;
+    color: white;
+    background-color: rgb(77, 76, 76);
+  }
+  .login-card {
+    background-color: #302f2f;
+  }
+  .card-title {
+    color: white;
+  }
+
+  .closebtn {
+    color: white;
+  }
+}

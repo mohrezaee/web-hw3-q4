@@ -1,0 +1,111 @@
+#root {
+  position: relative;
+}
+
+.title {
+  text-align: right;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.passenger-table {
+  width: 100%;
+}
+.passenger-container {
+  height: 500px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  margin: 0px auto;
+  width: 80%;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  align-items: right;
+  margin-top: 1rem;
+  flex-direction: row-reverse;
+  margin-bottom: 16px;
+  height: 100px;
+}
+
+.flight-details {
+  margin-left: 20px;
+  height: 100%;
+  width: 25%;
+  position: relative;
+  display: inline-block;
+  flex-grow: 1;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+tr {
+  border-bottom: 3px solid #ddd;
+}
+
+th {
+  border-bottom: 3px solid #ddd;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 9px;
+  padding-top: 7px;
+}
+
+.credential-input {
+  border: none;
+  width: 90%;
+  font-size: 16px;
+}
+
+.edit-button {
+  background-color: #e94059;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 8px 16px;
+  transition-duration: 200ms;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 50px;
+  margin-right: 30px;
+}
+
+.edit-button:hover {
+  background-color: #bf3449;
+}
+
+.continue-button {
+  background-color: #e94059;
+  border-radius: 4px;
+  font-size: 24px;
+  padding: 8px 16px;
+  transition-duration: 200ms;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 80%;
+}
+
+.continue-button:hover {
+  background-color: #bf3449;
+}
+
+@media (prefers-color-scheme: dark) {
+  .passenger-container {
+    color: white;
+    background-color: #302f2f;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1),
+      0 0 10px 0 rgba(255, 255, 255, 0.1);
+  }
+}

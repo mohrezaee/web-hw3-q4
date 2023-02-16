@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="fa">
+<meta charset="UTF-8">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شرکت هواپیمایی مهسا</title>
+    <link href="../index.css" rel="stylesheet" />
+    <link href="register.css" rel="stylesheet" />
+    <link rel="icon" href="../favicon.svg">
+</head>
+
+<body dir="rtl" id="root">
+    <nav class="home-navbar">
+        <img id="navbar-menu" class="navbar-menu" src="../imgs/menu.png" width="30px" height="30px"
+            onclick="openNav()" />
+        <div id="navbar-side-menu" class="side-navbar">
+            <span class="closebtn" onclick="closeNav()">&times;</span>
+            <button id="main-menu-button" class="navbar-button">
+                صفحه اصلی
+            </button>
+            <button id="navbar-login-button" class="navbar-button" onclick="login()">
+                ورود / ثبت نام
+            </button>
+            <button id="navbar-profile" class="navbar-button">
+                پروفایل
+            </button>
+            <button id="navbar-aboutus" class="navbar-button">
+                درباره ما
+            </button>
+            <button id="navbar-logout" class="navbar-button" onclick="logout()">
+                خروج
+            </button>
+        </div>
+        <a href="#" class="headerLogo">
+            <p class="header-logo-title">هواپیمایی مهسا</p>
+            <picture>
+                <source
+                    srcset="../imgs/logoW.png"
+                    media="(prefers-color-scheme: dark)">
+                    <img src="../imgs/logo.png" height="35px" />
+            </picture>
+        </a>
+    </nav>
+    <div class="center-container">
+        <div class="login-card">
+            <div class="login-form">
+                <h2 class="card-title">ایجاد حساب کاربری</h2>
+                <form onsubmit="register(event)">
+
+                    <div class="register-grid">
+                        <div>
+                            <p class="field-title">نام</p>
+                            <input required class="text-input" id="register-firstname" type="text"
+                                placeholder="نام خود را وارد کنید" />
+                        </div>
+                        <div>
+                            <p class="field-title">نام خانوادگی</p>
+                            <input required class="text-input" id="register-lastname" type="text"
+                                placeholder="نام خانوادگی خود را وارد کنید" />
+                        </div>
+                        <div>
+                            <p class="field-title">شماره پاسپورت</p>
+                            <input required class="text-input" id="register-passnumber" type="tel"
+                                placeholder=" شماره پاسپورت خود را وارد کنید" />
+                        </div>
+                        <div>
+                            <p class="field-title">ایمیل</p>
+                            <input required class="text-input" type="email" id="register-email"
+                                placeholder="ایمیل خود را وارد کنید" />
+                        </div>
+                        <div>
+                            <p class="field-title">رمز عبور</p>
+                            <input required class="text-input" type="password" id="register-password"
+                                placeholder="رمز عبور خود را وارد کنید" />
+                        </div>
+                        <div>
+                            <p class="field-title">تکرار رمز عبور </p>
+                            <input required class="text-input" type="password" id="register-password-confirm"
+                                placeholder="رمز عبور خود را تکرار کنید" />
+                        </div>
+                        <br />
+                    </div>
+                    <button type="submit" class="login-button">
+                        ایجاد حساب
+                    </button>
+                </form>
+                <a href="../login/login" style="color: gray;">
+                    حساب کاربری دارید؟
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="register.js"></script>
+    <script src="../global.js"></script>
+</body>
+
+</html>

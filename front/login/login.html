@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="fa">
+<meta charset="UTF-8">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شرکت هواپیمایی مهسا</title>
+    <link href="../index.css" rel="stylesheet" />
+    <link href="login.css" rel="stylesheet" />
+    <link rel="icon" href="../favicon.svg">
+</head>
+
+<body dir="rtl" id="root">
+    <nav class="home-navbar">
+        <img id="navbar-menu" class="navbar-menu" src="../imgs/menu.png" width="30px" height="30px"
+            onclick="openNav()" />
+        <div id="navbar-side-menu" class="side-navbar">
+            <span class="closebtn" onclick="closeNav()">&times;</span>
+            <button id="main-menu-button" class="navbar-button">
+                صفحه اصلی
+            </button>
+            <button id="navbar-login-button" class="navbar-button" onclick="login()">
+                ورود / ثبت نام
+            </button>
+            <button id="navbar-profile" class="navbar-button">
+                پروفایل
+            </button>
+            <button id="navbar-aboutus" class="navbar-button">
+                درباره ما
+            </button>
+            <button id="navbar-logout" class="navbar-button" onclick="logout()">
+                خروج
+            </button>
+        </div>
+        <a href="#" class="headerLogo">
+            <p class="header-logo-title">هواپیمایی مهسا</p>
+            <picture>
+                <source
+                    srcset="../imgs/logoW.png"
+                    media="(prefers-color-scheme: dark)">
+                    <img src="../imgs/logo.png" height="35px" />
+            </picture>
+        </a>
+    </nav>
+    <div class="center-container">
+        <div class="login-card">
+            <form onsubmit="login()">
+
+                <div class="login-form">
+
+                    <h2 class="card-title">ورود به حساب کاربری</h2>
+                    <p class="field-title">ایمیل</p>
+                    <input class="text-input" id="login-email" type="email" required autocomplete="username"
+                        placeholder="ایمیل خود را وارد کنید" />
+                    <p class="field-title">رمز عبور</p>
+                    <input class="text-input" id="login-password" type="password" required
+                        autocomplete="current-password" placeholder="رمز عبور خود را وارد کنید" />
+                    <br />
+                    <button class="login-button" type="submit">
+                        ورود
+                    </button>
+                    <a href="../register/register" style="color: gray;">
+                        حساب کاربری ندارید؟
+                        <span style="font-weight: 700;">
+                            ثبت نام کنید
+                        </span>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="login.js">
+
+    </script>
+    <script src="../global.js">
+
+    </script>
+</body>
+
+</html>
